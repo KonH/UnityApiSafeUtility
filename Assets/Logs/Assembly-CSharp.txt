@@ -1,0 +1,7 @@
+ASSEMBLY: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+PUBLIC_TYPES:
+TYPE: CustomAPI
+
+PRIVATE_TYPES:
+TYPE: CustomSecretAPI
+
