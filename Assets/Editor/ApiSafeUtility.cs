@@ -88,5 +88,65 @@ public static class ApiSafeUtility {
 	}
 	static void WriteTypeInfo(Type type) {
 		_sb.AppendFormat("TYPE: {0}", type.FullName);
+		_sb.Append("\n");
+		WriteFieldsInfo(type.GetFields());
+		WritePropertiesInfo(type.GetProperties());
+		WriteConstructorsInfo(type.GetConstructors());
+		WriteMethodsInfo(type.GetMethods());
+	}
+
+	static void WriteFieldsInfo(FieldInfo[] fields) {
+		foreach ( var field in fields ) {
+			WriteFieldInfo(field);
+			_sb.Append("\n");
+		}
+	}
+
+	static void WriteFieldInfo(FieldInfo field) {
+		var fieldUsage = field.IsStatic ? "STATIC" : "INSTANCE";
+		_sb.AppendFormat("{0} FIELD: {1} {2}", fieldUsage, field.FieldType, field.Name);
+	}
+
+	static void WritePropertiesInfo(PropertyInfo[] properties) {
+		foreach ( var prop in properties ) {
+			WritePropertyInfo(prop);
+			_sb.Append("\n");
+		}
+	}
+
+	static void WritePropertyInfo(PropertyInfo property) {
+		var getMethod = property.GetGetMethod();
+		var setMethod = property.GetSetMethod();
+		var access = string.Format(
+			"{0}{1}", 
+			((getMethod != null) && getMethod.IsPublic) ? "R" : "", 
+			((setMethod != null) && setMethod.IsPublic) ? "W" : "");
+		_sb.AppendFormat("PROPERTY: {0} {1} {2}", property.PropertyType, property.Name, access);
+	}
+
+	static void WriteConstructorsInfo(ConstructorInfo[] constructors) {
+		foreach ( var constr in constructors ) {
+			WriteConstructorInfo(constr);
+			_sb.Append("\n");
+		}
+	}
+
+	static void WriteConstructorInfo(ConstructorInfo constructor) {
+		// TODO: Args
+		var constrUsage = constructor.IsStatic ? "STATIC" : "INSTANCE";
+		_sb.AppendFormat("{0} CONSTRUCTOR", constrUsage);
+	}
+
+	static void WriteMethodsInfo(MethodInfo[] methods) {
+		foreach ( var method in methods ) {
+			WriteMethodInfo(method);
+			_sb.Append("\n");
+		}
+	}
+
+	static void WriteMethodInfo(MethodInfo method) {
+		// TODO args and returns
+		var methodUsage = method.IsStatic ? "STATIC" : "INSTANCE";
+		_sb.AppendFormat("{0} METHOD: {1}", methodUsage, method.Name);
 	}
 }
