@@ -1,4 +1,24 @@
 ASSEMBLY: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 TYPES:
 TYPE: CustomAPI
+STATIC FIELD: System.Int32 StaticField
+INSTANCE FIELD: System.Int32 MemberField
+PROPERTY: System.Int32 StaticIntMemberProperty R
+PROPERTY: System.Int32 IntMemberProperty R
+PROPERTY: System.String StringMemberProperty RW
+INSTANCE CONSTRUCTOR
+INSTANCE CONSTRUCTOR
+STATIC METHOD: get_StaticIntMemberProperty
+INSTANCE METHOD: get_IntMemberProperty
+INSTANCE METHOD: get_StringMemberProperty
+INSTANCE METHOD: set_StringMemberProperty
+STATIC METHOD: VoidStaticMethod
+STATIC METHOD: IntReturningStaticMethod
+INSTANCE METHOD: VoidMemberMethod
+INSTANCE METHOD: StringMemberMethod
+INSTANCE METHOD: Equals
+INSTANCE METHOD: GetHashCode
+INSTANCE METHOD: GetType
+INSTANCE METHOD: ToString
+
 

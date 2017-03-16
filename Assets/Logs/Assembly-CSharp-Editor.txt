@@ -1,4 +1,10 @@
 ASSEMBLY: Assembly-CSharp-Editor, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 TYPES:
 TYPE: ApiSafeUtility
+STATIC METHOD: SelectPrivateTypes
+INSTANCE METHOD: Equals
+INSTANCE METHOD: GetHashCode
+INSTANCE METHOD: GetType
+INSTANCE METHOD: ToString
+
 
