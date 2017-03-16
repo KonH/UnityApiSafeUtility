@@ -44,24 +44,18 @@ public static class ApiSafeUtility {
 		_sb = new StringBuilder();
 		_sb.AppendFormat("ASSEMBLY: {0}\n", assembly.FullName);
 		
-		var allTypes = assembly.GetTypes();
 		var publicTypes = assembly.GetExportedTypes();
-		var privateTypes = FindPrivateTypes(allTypes, publicTypes);
 
-		_sb.Append("PUBLIC_TYPES:\n");
+		_sb.Append("TYPES:\n");
 		WriteTypesInfo(publicTypes);
 		_sb.Append("\n");
-
-		_sb.Append("PRIVATE_TYPES:\n");
-		WriteTypesInfo(privateTypes);
-		_sb.Append("\n");
-
+		
 		var text = _sb.ToString();
 		Debug.Log(text);
 		WriteToFile(assembly.GetName().Name + ".txt", text);
 	}
 
-	static Type[] FindPrivateTypes(Type[] allTypes, Type[] publicTypes) {
+	public static Type[] SelectPrivateTypes(Type[] allTypes, Type[] publicTypes) {
 		var privateTypes = new List<Type>();
 		foreach ( var type in allTypes ) {
 			var isPublic = false;

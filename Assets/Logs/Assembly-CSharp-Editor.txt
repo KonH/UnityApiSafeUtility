@@ -1,6 +1,4 @@
 ASSEMBLY: Assembly-CSharp-Editor, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-PUBLIC_TYPES:
+TYPES:
 TYPE: ApiSafeUtility
-
-PRIVATE_TYPES:
 
