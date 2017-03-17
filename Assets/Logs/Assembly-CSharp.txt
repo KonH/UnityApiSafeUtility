@@ -3,22 +3,22 @@ TYPES:
 TYPE: CustomAPI
 STATIC FIELD: System.Int32 StaticField
 INSTANCE FIELD: System.Int32 MemberField
-PROPERTY: System.Int32 StaticIntMemberProperty R
-PROPERTY: System.Int32 IntMemberProperty R
-PROPERTY: System.String StringMemberProperty RW
-INSTANCE CONSTRUCTOR
-INSTANCE CONSTRUCTOR
-STATIC METHOD: get_StaticIntMemberProperty
-INSTANCE METHOD: get_IntMemberProperty
-INSTANCE METHOD: get_StringMemberProperty
-INSTANCE METHOD: set_StringMemberProperty
-STATIC METHOD: VoidStaticMethod
-STATIC METHOD: IntReturningStaticMethod
-INSTANCE METHOD: VoidMemberMethod
-INSTANCE METHOD: StringMemberMethod
-INSTANCE METHOD: Equals
-INSTANCE METHOD: GetHashCode
-INSTANCE METHOD: GetType
-INSTANCE METHOD: ToString
+PROPERTY: System.Int32 StaticIntMemberProperty(get;)
+PROPERTY: System.Int32 IntMemberProperty(get;)
+PROPERTY: System.String StringMemberProperty(get;set;)
+INSTANCE CONSTRUCTOR()
+INSTANCE CONSTRUCTOR(System.String arg)
+STATIC METHOD: System.Int32 get_StaticIntMemberProperty()
+INSTANCE METHOD: System.Int32 get_IntMemberProperty()
+INSTANCE METHOD: System.String get_StringMemberProperty()
+INSTANCE METHOD: System.Void set_StringMemberProperty(System.String value)
+STATIC METHOD: System.Void VoidStaticMethod()
+STATIC METHOD: System.Int32 IntReturningStaticMethod()
+INSTANCE METHOD: System.Void VoidMemberMethod()
+INSTANCE METHOD: System.String StringMemberMethod()
+INSTANCE METHOD: System.Boolean Equals(System.Object obj)
+INSTANCE METHOD: System.Int32 GetHashCode()
+INSTANCE METHOD: System.Type GetType()
+INSTANCE METHOD: System.String ToString()
 
 

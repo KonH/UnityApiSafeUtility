@@ -1,10 +1,10 @@
 ASSEMBLY: Assembly-CSharp-Editor, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 TYPES:
 TYPE: ApiSafeUtility
-STATIC METHOD: SelectPrivateTypes
-INSTANCE METHOD: Equals
-INSTANCE METHOD: GetHashCode
-INSTANCE METHOD: GetType
-INSTANCE METHOD: ToString
+STATIC METHOD: System.Type[] SelectPrivateTypes(System.Type[] allTypes, System.Type[] publicTypes)
+INSTANCE METHOD: System.Boolean Equals(System.Object obj)
+INSTANCE METHOD: System.Int32 GetHashCode()
+INSTANCE METHOD: System.Type GetType()
+INSTANCE METHOD: System.String ToString()
 
 
