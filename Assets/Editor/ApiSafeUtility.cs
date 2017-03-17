@@ -119,9 +119,9 @@ public static class ApiSafeUtility {
 		var setMethod = property.GetSetMethod();
 		var access = string.Format(
 			"{0}{1}", 
-			((getMethod != null) && getMethod.IsPublic) ? "R" : "", 
-			((setMethod != null) && setMethod.IsPublic) ? "W" : "");
-		_sb.AppendFormat("PROPERTY: {0} {1} {2}", property.PropertyType, property.Name, access);
+			((getMethod != null) && getMethod.IsPublic) ? "get;" : "", 
+			((setMethod != null) && setMethod.IsPublic) ? "set;" : "");
+		_sb.AppendFormat("PROPERTY: {0} {1}({2})", property.PropertyType, property.Name, access);
 	}
 
 	static void WriteConstructorsInfo(ConstructorInfo[] constructors) {
