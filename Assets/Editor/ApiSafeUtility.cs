@@ -135,6 +135,7 @@ public static class ApiSafeUtility {
 		// TODO: Args
 		var constrUsage = constructor.IsStatic ? "STATIC" : "INSTANCE";
 		_sb.AppendFormat("{0} CONSTRUCTOR", constrUsage);
+		ExtractParametersInfo(constructor.GetParameters());
 	}
 
 	static void WriteMethodsInfo(MethodInfo[] methods) {
@@ -145,8 +146,20 @@ public static class ApiSafeUtility {
 	}
 
 	static void WriteMethodInfo(MethodInfo method) {
-		// TODO args and returns
 		var methodUsage = method.IsStatic ? "STATIC" : "INSTANCE";
-		_sb.AppendFormat("{0} METHOD: {1}", methodUsage, method.Name);
+		_sb.AppendFormat("{0} METHOD: {1} {2}", methodUsage, method.ReturnType, method.Name);
+		ExtractParametersInfo(method.GetParameters());
+	}
+
+	static void ExtractParametersInfo(ParameterInfo[] parameters) {
+		_sb.Append("(");
+		for ( int i = 0; i < parameters.Length; i++ ) {
+			var param = parameters[i];
+			_sb.AppendFormat("{0} {1}", param.ParameterType, param.Name);
+			if ( i < parameters.Length - 1 ) {
+				_sb.Append(", ");
+			}
+		}
+		_sb.Append(")");
 	}
 }
